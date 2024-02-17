@@ -1,0 +1,33 @@
+
+
+ <div class="post-container container text-center " (scroll)="onScroll()">
+<div class="row">
+
+      <div *ngFor="let post of visiblePosts" class="post col-md-6"  >
+        
+              <mat-card class="example-card" *ngIf="post.visible">
+                <mat-card-header>
+                  <mat-card-subtitle>Creatingly Task</mat-card-subtitle>
+                  <mat-card-title>Naser khalilvandi</mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                
+                  <h2>{{ post.title }}</h2>
+                  <p>{{ post.content }}</p>
+                  <mat-divider></mat-divider>
+                </mat-card-content>
+              
+                <mat-card-footer>
+                  <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+                </mat-card-footer>
+              </mat-card>
+          
+      </div>
+
+
+        <div *ngIf="loading" class="loading-indicator">
+          Loading...
+        </div>
+
+  </div>
+  </div> 
